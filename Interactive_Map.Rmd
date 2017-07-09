@@ -1,0 +1,64 @@
+---
+title: "Untitled"
+author: "Tuyen, V. Ha"
+date: "July 9, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+my_data<-read.csv("https://raw.githubusercontent.com/tuyenhavan/Statistics/Dataset/My_data.csv")
+
+my_data<-my_data[,c(3:5)]
+
+my_data<- my_data[my_data$lon>0,]
+
+plot(my_data$lat~my_data$lon)
+
+my_data$x=my_data$lat
+
+my_data$y=my_data$lon
+
+my_data_new<-my_data
+
+# library
+library(raster)
+
+coordinates(my_data_new)<-~x+y
+
+pop_up<-paste0("Ser:", " ",my_data_new$ser)
+
+factcol<-colorFactor(topo.colors(5),my_data$ser)
+
+```
+
+```{r}
+library(leaflet)
+
+leaflet(data=my_data) %>% addTiles() %>% addMarkers(lat=~lat,lng=~lon,popup=pop_up) %>% addCircleMarkers(lat=~lat,lng=~lon,color =~factcol(ser))
+
+```
+
