@@ -1,0 +1,11 @@
+Cover,Product,Percent
+Agriculture,Landsat-based area,35.24
+Urban,Landsat-based area,4.56
+Mining,Landsat-based area,5.6
+Forest,Landsat-based area,52.5
+Water,Landsat-based area,1.69
+Agriculture,Local land use statistics,31.9
+Urban,Local land use statistics,10
+Mining,Local land use statistics,1.4
+Forest,Local land use statistics,52.7
+Water,Local land use statistics,4
