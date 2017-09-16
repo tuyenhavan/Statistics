@@ -1,0 +1,16 @@
+Land ,Area,Year
+Agriculture,1267.9,Year 2000
+Urban,30.6,Year 2000
+Mining,39.1,Year 2000
+Forest,2131.5,Year 2000
+Water,51.6,Year 2000
+Agriculture,1240.9,Year 2016
+Urban,160.7,Year 2016
+Mining,211,Year 2016
+Forest,1848.7,Year 2016
+Water,59.7,Year 2016
+Agriculture,-27,Temporal Change
+Urban,130.1,Temporal Change
+Mining,171.9,Temporal Change
+Forest,-282.8,Temporal Change
+Water,8.1,Temporal Change
